@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History of Transactions
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>BUY/SELL</td>
+                <td>SYMBOL</td>
+                <td>SHARE</td>
+                <td>PRICE</td>
+                <td>TRANSACTED</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for trans in transaction %}
+            <tr>
+                <td>{{ trans.ty_purchase }}</td>
+                <td>{{ trans.stockname }}</td>
+                <td>{{ trans.nstocks }}</td>
+                <td>{{ trans.price }}</td>
+                <td>{{ trans.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
